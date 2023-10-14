@@ -7,12 +7,12 @@
 void print_environ(void)
 {
 	char **env = environ;
-	size_t str_len;
+	size_t _strlen;
 
 	while (*env != NULL)
 	{
-		str_len = strlen(*env);
-		write(1, *env, str_len);
+		_strlen = str_len(*env);
+		write(1, *env, _strlen);
 		write(1, "\n", 1);
 		env++;
 	}
