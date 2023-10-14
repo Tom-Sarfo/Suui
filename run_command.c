@@ -17,7 +17,7 @@ void run_command(char *nipa_input, char **argv, char *pokemon, char *delimetr)
 	while (pokemon != NULL)
 	{
 		argv[i] = malloc(sizeof(char) * (strlen(pokemon) + 1));
-		strcpy(argv[i], pokemon);
+		str_copy(argv[i], pokemon);
 		pokemon = strtok(NULL, delimetr);
 		i++;
 	}
