@@ -7,7 +7,7 @@
 
 void exit_shell(char *nipa_input)
 {
-	if (strcmp(nipa_input, "exit") == 0)
+	if (str_cmp(nipa_input, "exit") == 0)
 	{
 		exit(0);
 	}
