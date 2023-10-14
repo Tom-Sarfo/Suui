@@ -1,0 +1,26 @@
+#include "shell.h"
+/**
+ * run_command - a fucntion that runs commands
+ * @nipa_input: user input in a string format
+ * @argv: a list or arguments from user
+ * @pokemon: tokenized user input
+ * @delimetr: a delimeter used in tokenization
+ *
+ */
+
+void run_command(char *nipa_input, char **argv, char *pokemon, char *delimetr)
+{
+	int i = 0;
+
+	pokemon = strtok(nipa_input, delimetr);
+
+	while (pokemon != NULL)
+	{
+		argv[i] = malloc(sizeof(char) * (strlen(pokemon) + 1));
+		strcpy(argv[i], pokemon);
+		pokemon = strtok(NULL, delimetr);
+		i++;
+	}
+	argv[i] = NULL;
+	handle_command(argv);
+}
