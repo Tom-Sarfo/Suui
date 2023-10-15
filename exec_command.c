@@ -30,7 +30,7 @@ void yenza_command(char *nipa_input)
 	check_malloc(array_of_pokemons);
 	if (cp_id == 0)
 	{
-		run_command(copy_nipa, array_of_pokemons, pokemon, delimetr);
+		ye_commd(copy_nipa, array_of_pokemons, pokemon, delimetr);
 	}
 	else
 	{

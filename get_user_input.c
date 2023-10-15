@@ -6,7 +6,7 @@
 
 void gye_input(void)
 {
-	char *nipa_input;
+	char *nipa_input = NULL;
 	size_t input_size = 0;
 	ssize_t buff_len;
 
