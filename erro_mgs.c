@@ -4,7 +4,7 @@
  *
  */
 
-char *erro_mgs(int counter)
+char *erro_mgs(int counter, char *argv)
 {
 	char after_pipe;
 	char cwd[PATH_MAX];
@@ -12,5 +12,4 @@ char *erro_mgs(int counter)
 	char *erro;
 
 	after_pipe = getcwd(cwd, sizeof(cwd));
-
-
+	
