@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <limits.h>
 
 void kyere_prompt(void);
 void gye_input(void);
@@ -26,5 +27,6 @@ char *str_chr(char *s, char c);
 int str_len(char *s);
 int str_cmp(char *s1, char *s2);
 char *str_str(char *haystack, char *needle);
+char *erro_mgs(int counter, char *argv);
 
 #endif

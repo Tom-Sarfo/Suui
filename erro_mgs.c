@@ -4,32 +4,33 @@
  *
  */
 
-char *erro_mgs(int counter, argv)
+char *erro_mgs(int counter, char *argv)
 {
 	char after_pipe;
 	char cwd[PATH_MAX];
 	const char *end_mgs;
-	char *erro;
+	char *error;
 	char *colon = ": ";
-	char error_msg[10];;
+	char error_msg[7];
+	int i;
 
 	after_pipe = getcwd(cwd, sizeof(cwd));
+	
 
 	// have 1. path 2. counter 3. argv, error message
 //	./hsh: 1: qwerty : not found
-	write(2, after_pipe, strlen(after_pipe));
-	write(2, colon, strlen(colon));
-	write(2, counter, strlen(counter));
-	write(2, colon, strlen(colon));
-	write(2, argv, strlen(argv));
-	write(2, colon, strlen(colon));
-	write(2, error_msg, strlen(error_msg);
-        strings[];
+	error_msg[0] = after_pipe;
+	error_msg[1] = colon;
+	error_msg[2] = counter;
+	error_msg[3] = colon;
+	error_msg[4] = argv;
+	error_msg[5] = colon;
+	error_msg[6] = end_mgs;
 
-	string[0] = after_pipe;
-	string[1] = colon;
-	------- = -----;
+	for (i = 0; i < 8; i++)
+	{
+		error = write(2, error_msg[i], strlen(error_msg[i]));
+	}
 
-	error = write(2, string[], strlen(string[]));
-
-	return (error)
+	return (error);
+}
