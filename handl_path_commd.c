@@ -41,7 +41,7 @@ void handl_path_commd(char **argv)
 	}
 	if (execve(command, argv, NULL) == -1)
 	{
-		perror("./shell");
+		perror(command);
 		exit(EXIT_FAILURE);
 	}
 	free(copy_path);
