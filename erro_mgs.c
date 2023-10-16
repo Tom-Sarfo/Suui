@@ -9,9 +9,10 @@ char *erro_mgs(int counter, char *argv)
 	char after_pipe;
 	char cwd[PATH_MAX];
 	const char *end_mgs;
-	char *erro;
+	char *error;
 	char *colon = ": ";
-	char error_msg[10];
+	char error_msg[7];
+	int i;
 
 	after_pipe = getcwd(cwd, sizeof(cwd));
 	
@@ -26,7 +27,10 @@ char *erro_mgs(int counter, char *argv)
 	error_msg[5] = colon;
 	error_msg[6] = end_mgs;
 
-	error = write(2, string[], strlen(string[]));
+	for (i = 0; i < 8; i++)
+	{
+		error = write(2, error_msg[i], strlen(error_msg[i]));
+	}
 
 	return (error);
 }
