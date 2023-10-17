@@ -8,17 +8,15 @@ char *erro_mgs(int counter, char *argv)
 {
 	char after_pipe;
 	char cwd[PATH_MAX];
-	const char *end_mgs;
+	char end_mgs;
 	char *error;
-	char *colon = ": ";
+	char colon = ": ";
 	char error_msg[7];
 	int i;
 
 	after_pipe = getcwd(cwd, sizeof(cwd));
+	end_mgs = "not found";
 	
-
-	// have 1. path 2. counter 3. argv, error message
-//	./hsh: 1: qwerty : not found
 	error_msg[0] = after_pipe;
 	error_msg[1] = colon;
 	error_msg[2] = counter;
@@ -34,3 +32,22 @@ char *erro_mgs(int counter, char *argv)
 
 	return (error);
 }
+
+int main(void)
+{
+	int counter = 1;
+	char *argv = "ls";
+	char *msg;
+
+	while (counter < 1000)
+	{
+		if (execve(argv) == -1)
+		{
+			msg = erro_mgs(counter, argv);
+		}
+		counter++;
+	}
+	printf("%s\n", msg);
+	return (0);
+}
+
