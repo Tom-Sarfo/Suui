@@ -2,6 +2,7 @@
 #define SHELL_H
 
 #include <stdio.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
@@ -34,5 +35,6 @@ void err_printer(char *err_msg);
 int change_dir(const char *dirt);
 int pwd_update(void);
 int cd_main(int argc, char argv[]);
+bool is_interact(void);
 
 #endif

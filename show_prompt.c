@@ -5,5 +5,8 @@
 
 void kyere_prompt(void)
 {
-	she_prints("Achatina# ");
+	if (is_interact())
+	{
+		she_prints("Achatina# ");
+	}
 }
