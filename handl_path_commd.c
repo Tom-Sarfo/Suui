@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * handle_command - create env path and execute command
+ * handl_path_commd - create env path and execute command
  * @argv: double pointer to argument list of users input
  * Return: nothing;
  */

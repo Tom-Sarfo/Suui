@@ -9,6 +9,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <limits.h>
+#define MAX_PATH_SIZE PATH_MAX
 
 void kyere_prompt(void);
 void gye_input(void);
@@ -28,5 +29,10 @@ int str_len(char *s);
 int str_cmp(char *s1, char *s2);
 char *str_str(char *haystack, char *needle);
 char *erro_mgs(int counter, char *argv);
+int update_PWD(char *our_path);
+void err_printer(char *err_msg);
+int change_dir(const char *dirt);
+int pwd_update(void);
+int cd_main(int argc, char *argv[]);
 
 #endif

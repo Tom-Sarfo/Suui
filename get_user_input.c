@@ -17,13 +17,17 @@ void gye_input(void)
 		she_prints("\n");
 		exit(EXIT_FAILURE);
 	}
-	if (strcmp(nipa_input, "env\n") == 0)
+	if (str_cmp(nipa_input, "env\n") == 0)
 	{
 		print_environ();
 	}
 	if (buff_len > 0 && nipa_input[buff_len - 1] == '\n')
 	{
 		nipa_input[buff_len - 1] = '\0';
+	}
+	if (str_cmp(nipa_input, "cd\n") == 0)
+	{
+		cd_main();
 	}
 	exit_shell(nipa_input);
 	yenza_command(nipa_input);
