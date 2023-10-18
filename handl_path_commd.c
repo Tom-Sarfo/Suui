@@ -39,11 +39,6 @@ void handl_path_commd(char **argv)
 			path_poken = strtok(NULL, ":");
 		}
 	}
-	if (command == NULL)
-	{
-		perror("executable not found in PATH");
-		exit(EXIT_FAILURE);
-	}
 	if (execve(command, argv, NULL) == -1)
 	{
 		perror(command);
