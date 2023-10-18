@@ -22,13 +22,13 @@ void yenza_command(char *nipa_input)
 		pokemon_count++;
 		pokemon = strtok(NULL, delimetr);
 	}
-	/* if (cp_id == -1)
+	if (cp_id == -1)
 	{
 		perror("fork");
 		exit(EXIT_FAILURE);
-	}*/
+	}
 	check_malloc(array_of_pokemons);
-	/* if (cp_id == 0)
+	if (cp_id == 0)
 	{
 		ye_commd(copy_nipa, array_of_pokemons, pokemon, delimetr);
 	}
