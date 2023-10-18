@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * run_command - a fucntion that runs commands
+ * ye_commd - a fucntion that runs commands
  * @nipa_input: user input in a string format
  * @argv: a list or arguments from user
  * @pokemon: tokenized user input
