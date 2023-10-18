@@ -14,7 +14,7 @@ void gye_input(void)
 
 	if (buff_len == -1)
 	{
-		she_prints("\n");
+		she_prints("");
 		exit(EXIT_FAILURE);
 	}
 	if (str_cmp(nipa_input, "env\n") == 0)
@@ -29,7 +29,7 @@ void gye_input(void)
 	 * if (str_cmp(nipa_input, "cd\n") == 0)
 	*{
 	*	cd_main();
-	*}
+	}
 	*/
 	exit_shell(nipa_input);
 	yenza_command(nipa_input);

@@ -1,4 +1,4 @@
-void fork(params)
+oid fork(params)
 {
    check wether a command exist - access to check if dir is valid
    IF not valid

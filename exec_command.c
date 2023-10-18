@@ -10,7 +10,7 @@ void yenza_command(char *nipa_input)
 	pid_t cp_id = fork();
 	int pokemon_count = 0;
 	char *pokemon, *delimetr = " \n", **array_of_pokemons;
-	char *copy_nipa = malloc(sizeof(char) * strlen(nipa_input));
+	char *copy_nipa = malloc(sizeof(char) * (strlen(nipa_input) + 1));
 
 	array_of_pokemons = malloc(sizeof(char *) * (pokemon_count + 1));
 	check_malloc(&copy_nipa);
