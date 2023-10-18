@@ -36,5 +36,7 @@ void yenza_command(char *nipa_input)
 	{
 		wait(NULL);
 	}
-	free_memory(array_of_pokemons, copy_nipa, nipa_input);
+	free(array_of_pokemons);
+	free(copy_nipa);
+	free(nipa_input);
 }
