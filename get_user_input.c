@@ -25,10 +25,10 @@ void gye_input(void)
 	{
 		nipa_input[buff_len - 1] = '\0';
 	}
-	if (str_cmp(nipa_input, "cd\n") == 0)
+	/*if (str_cmp(nipa_input, "cd\n") == 0)
 	{
 		cd_main();
-	}
+	}*/
 	exit_shell(nipa_input);
 	yenza_command(nipa_input);
 }
