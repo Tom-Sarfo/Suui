@@ -27,6 +27,6 @@ char *str_chr(char *s, char c);
 int str_len(char *s);
 int str_cmp(char *s1, char *s2);
 char *str_str(char *haystack, char *needle);
-char *erro_mgs(int counter, char *argv);
+void erro_mgs(char *counter, char *argv);
 
 #endif
