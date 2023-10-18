@@ -41,12 +41,14 @@ void handl_path_commd(char **argv)
 	}
 	if (command == NULL)
 	{
-		perror("executable not found in PATH");
+		fprintf(stderr, "./simple_shell: command: not found\n");
 		exit(EXIT_FAILURE);
 	}
 	if (execve(command, argv, NULL) == -1)
 	{
-		perror(command);
+		/*perror(command);*/
+		/*./hsh: 1: qwerty: not found */
+		fprintf(stderr, "./simple_shell: %s\n: not found", command);
 		exit(EXIT_FAILURE);
 	}
 	free(copy_path);
