@@ -9,7 +9,11 @@ void handl_path_commd(char **argv)
 	char *command = NULL, *path = getenv("PATH"), *path_poken, *full_path;
 	char *search = str_chr(argv[0], '/');
 	char *copy_path = malloc(str_len(path) + 1);
+	char *cwd = NULL;
+	size_t size = 20;
 
+	cwd= (char *)malloc((size_t)size);
+	cwd = getcwd(cwd, size);
 	str_copy(copy_path, path);
 	if (search != NULL)
 	{
@@ -30,7 +34,6 @@ void handl_path_commd(char **argv)
 			str_copy(full_path, path_poken);
 			str_concat(full_path, "/");
 			str_concat(full_path, argv[0]);
-
 			if (access(full_path, X_OK) == 0)
 			{
 				command = full_path;
@@ -39,19 +42,12 @@ void handl_path_commd(char **argv)
 			path_poken = strtok(NULL, ":");
 		}
 	}
-	if (command == NULL)
-	{
-		fprintf(stderr, "./simple_shell: command: not found\n");
-		exit(EXIT_FAILURE);
-	}
 	if (execve(command, argv, NULL) == -1)
 	{
-		/*perror(command);*/
-		/*./hsh: 1: qwerty: not found */
-		fprintf(stderr, "./simple_shell: %s\n: not found", command);
-		exit(EXIT_FAILURE);
+		exec_output(argv);
 	}
 	free(copy_path);
 	free(full_path);
+	free(cwd);
 }
 
