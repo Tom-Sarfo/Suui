@@ -9,11 +9,7 @@ void handl_path_commd(char **argv)
 	char *command = NULL, *path = getenv("PATH"), *path_poken, *full_path;
 	char *search = str_chr(argv[0], '/');
 	char *copy_path = malloc(str_len(path) + 1);
-	char *cwd = NULL;
-	size_t size = 20;
 
-	cwd= (char *)malloc((size_t)size);
-	cwd = getcwd(cwd, size);
 	str_copy(copy_path, path);
 	if (search != NULL)
 	{
@@ -48,6 +44,5 @@ void handl_path_commd(char **argv)
 	}
 	free(copy_path);
 	free(full_path);
-	free(cwd);
 }
 
