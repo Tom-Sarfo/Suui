@@ -37,5 +37,6 @@ int pwd_update(void);
 int cd_main(int argc, char argv[]);
 bool is_interact(void);
 void exec_output(char **argv);
+void free_argv(char **argv);
 
 #endif

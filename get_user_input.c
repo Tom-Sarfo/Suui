@@ -33,4 +33,5 @@ void gye_input(void)
 	*/
 	exit_shell(nipa_input);
 	yenza_command(nipa_input);
+	free(nipa_input);
 }

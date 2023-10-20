@@ -8,8 +8,9 @@ void handl_path_commd(char **argv)
 {
 	char *command = NULL, *path = getenv("PATH"), *path_poken, *full_path;
 	char *search = str_chr(argv[0], '/');
-	char *copy_path = malloc(str_len(path) + 1);
+	char *copy_path;
 
+	copy_path = (char*)malloc(strlen(path) + 1);
 	str_copy(copy_path, path);
 	if (search != NULL)
 	{
@@ -25,7 +26,7 @@ void handl_path_commd(char **argv)
 		}
 		while (path_poken != NULL)
 		{
-			full_path = malloc(str_len(path_poken) + 1 + str_len(argv[0]));
+			full_path = (char*)malloc(strlen(path_poken) + 2 + strlen(argv[0]));
 			check_malloc(&full_path);
 			str_copy(full_path, path_poken);
 			str_concat(full_path, "/");
@@ -35,6 +36,7 @@ void handl_path_commd(char **argv)
 				command = full_path;
 				break;
 			}
+			free(full_path);
 			path_poken = strtok(NULL, ":");
 		}
 	}
@@ -43,6 +45,6 @@ void handl_path_commd(char **argv)
 		exec_output(argv);
 	}
 	free(copy_path);
-	free(full_path);
+	/*free(full_path);*/
 }
 

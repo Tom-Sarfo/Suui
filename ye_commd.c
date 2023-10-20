@@ -16,12 +16,17 @@ void ye_commd(char *nipa_input, char **argv, char *pokemon, char *delimetr)
 
 	while (pokemon != NULL)
 	{
-		argv[i] = malloc(sizeof(char) * (str_len(pokemon) + 1));
+		argv[i] = malloc(strlen(pokemon) + 1);
+		if (argv[i] == NULL)
+		{
+			perror("malloc");
+			exit(EXIT_FAILURE);
+		}
 		str_copy(argv[i], pokemon);
 		pokemon = strtok(NULL, delimetr);
 		i++;
 	}
 	argv[i] = NULL;
 	handl_path_commd(argv);
-	free(argv[i]);
+/*	free_argv(argv);*/
 }
